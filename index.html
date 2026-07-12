@@ -218,6 +218,68 @@
   }
   .ph-goal strong{color:var(--brass);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;font-size:12px;margin-right:8px;}
 
+  /* ---------- MONTH BREAKDOWN ---------- */
+  .ph-detail{margin-top:14px;border-top:1px dashed var(--line);}
+  .ph-detail summary{
+    list-style:none;
+    cursor:pointer;
+    padding:12px 0 4px;
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .ph-detail summary::-webkit-details-marker{display:none;}
+  .ph-detail summary::after{
+    content:"";
+    width:7px;height:7px;
+    border:solid var(--brass);
+    border-width:0 2px 2px 0;
+    transform:rotate(45deg);
+    transition:transform .2s;
+    margin-top:-3px;
+  }
+  .ph-detail[open] summary::after{transform:rotate(-135deg);margin-top:3px;}
+  .ph-detail summary:focus-visible{outline:2px solid var(--brass);outline-offset:2px;}
+  .mo-row{
+    display:flex;
+    gap:14px;
+    padding:10px 0;
+    border-top:1px solid rgba(201,164,76,0.12);
+  }
+  .mo-row:first-of-type{border-top:none;}
+  .mo-name{
+    flex:none;
+    width:86px;
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--cream);
+    padding-top:1px;
+  }
+  .mo-row ul{list-style:none;flex:1;}
+  .mo-row li{
+    position:relative;
+    padding-left:16px;
+    margin-bottom:4px;
+    font-size:13.5px;
+    color:#C7D8CE;
+  }
+  .mo-row li::before{
+    content:"";
+    position:absolute;left:1px;top:8px;
+    width:5px;height:5px;
+    background:var(--brass-deep);
+    border-radius:50%;
+  }
+
   /* ---------- SALARY LADDER ---------- */
   .ladder{display:flex;gap:0;align-items:flex-end;}
   .rung{
@@ -512,14 +574,26 @@
             "Excel 3x/week: formulas \u2192 pivot tables \u2192 XLOOKUP",
             "CPC exam format awareness from month 2"
           ],
-          goal:"Program complete by end of May. Zero backlog." },
+          goal:"Program complete by end of May. Zero backlog.",
+          months:[
+            { m:"January", pts:["Enroll; establish the 35 hr/week rhythm from day one","Medical terminology + anatomy foundations","ICD-10-CM structure and guidelines begin","Excel: sorting, basic formulas, clean tables"] },
+            { m:"February", pts:["ICD-10-CM deep dive \u2014 chapter-specific guidelines","CPT introduction: E/M and structure","First look at CPC exam format and timing","Excel: SUMIF, COUNTIF, named ranges"] },
+            { m:"March", pts:["CPT surgery sections + modifiers","HCPCS Level II begins","Checkpoint: program 50% complete","Excel: pivot tables"] },
+            { m:"April", pts:["Finish remaining CPT sections + HCPCS","Daily CPC guideline drills begin (30 min)","Excel: XLOOKUP / VLOOKUP mastery"] },
+            { m:"May", pts:["Final program modules + capstone \u2014 program DONE","First full timed CPC practice exam (baseline score)","Build weak-chapter review list from results"] }
+          ] },
         { d:"June 2027", t:"Phase 2 \u00b7 CPC Strike",
           items:[
             "Full CPC practice exams weekly \u2014 target 80%+ before sitting",
             "Register and sit the CPC exam (AAPC) in June",
             "Begin EHR fundamentals: workflows, revenue cycle inside EHRs"
           ],
-          goal:"CPC passed on the first attempt." },
+          goal:"CPC passed on the first attempt.",
+          months:[
+            { m:"Week 1\u20132", pts:["Two full timed practice exams; drill every missed question","Attack weak chapters until 80%+ consistent"] },
+            { m:"Week 3", pts:["Register for CPC (AAPC); final guideline review","Light EHR reading: what an EHR is, clinical workflows"] },
+            { m:"Week 4", pts:["Sit the CPC exam \u2014 rested, prayed up, prepared","Rest 2\u20133 days, then preview CRC materials"] }
+          ] },
         { d:"Jul \u2013 Aug 2027", t:"Phase 3 \u00b7 CRC \u2014 The Differentiator",
           items:[
             "CRC (Risk Adjustment / HCC) prep \u2014 6\u20138 focused weeks",
@@ -527,14 +601,22 @@
             "Resume + LinkedIn rebuilt: CPC, CRC, Excel, EHR literacy",
             "Start applying: HCC Coder, Coding Associate, Revenue Cycle roles"
           ],
-          goal:"CPC + CRC stacked in one summer. Applications flowing." },
+          goal:"CPC + CRC stacked in one summer. Applications flowing.",
+          months:[
+            { m:"July", pts:["CRC curriculum: CMS-HCC model, risk adjustment logic","HCC category mapping + documentation requirements (MEAT)","Rebuild resume: certificate, CPC, Excel, EHR literacy","EHR study: revenue cycle inside Epic-style systems"] },
+            { m:"August", pts:["CRC practice exams weekly \u2014 target 80%+","Sit CRC exam by end of month","LinkedIn profile live and optimized","First application batch: HCC Coder, Coding Associate, Revenue Cycle"] }
+          ] },
         { d:"Sep 2027", t:"Phase 4 \u00b7 Get Hired",
           items:[
             "Apply aggressively: hospitals, Medicare Advantage plans, RCM vendors",
             "Interview line: \u201cNot Epic-certified yet \u2014 but I know the workflows and I\u2019m ready for sponsorship.\u201d",
             "Accept a strong entry: $55\u201370K. Get in the building."
           ],
-          goal:"Employed by end of September." },
+          goal:"Employed by end of September.",
+          months:[
+            { m:"Week 1\u20132", pts:["15\u201320 tailored applications per week","Mock interviews: coding scenarios + the Epic-readiness answer","Follow up on August applications"] },
+            { m:"Week 3\u20134", pts:["Interviews \u2014 lead with CPC + CRC + Excel + EHR literacy","Negotiate respectfully; accept a strong entry offer","Target: offer in hand before October"] }
+          ] },
         { d:"Oct \u2013 Dec 2027", t:"Phase 5 \u00b7 Position for the Jump",
           items:[
             "SQL basics \u2014 SQLBolt + practice, 2 months",
@@ -542,7 +624,12 @@
             "Target employer-sponsored Epic certification",
             "Map the Year-2 move: RCM Analyst / Epic Analyst track"
           ],
-          goal:"Year 1 closed: certified, employed, positioned for $75\u201390K." }
+          goal:"Year 1 closed: certified, employed, positioned for $75\u201390K.",
+          months:[
+            { m:"October", pts:["Excel in the new role \u2014 first 30 days set the reputation","SQL month 1: SELECT, WHERE, ORDER BY, JOINs (SQLBolt)","Learn which Epic modules your employer runs"] },
+            { m:"November", pts:["SQL month 2: aggregation, GROUP BY, subqueries","Volunteer for every Epic / systems task available","Build one Excel + SQL mini-report your team actually uses"] },
+            { m:"December", pts:["Epic sponsorship conversation with manager \u2014 ask directly","Document Year 1 wins for review season","Write the Year-2 plan: RCM Analyst / Epic Analyst track"] }
+          ] }
       ],
       ms: [
         { id:"m1", text:"Enroll & begin billing/coding program", date:"Jan 2027" },
@@ -574,14 +661,27 @@
             "Excel 2x/week: formulas \u2192 pivot tables \u2192 XLOOKUP",
             "CPC exam format awareness from month 3"
           ],
-          goal:"Program complete by end of June." },
+          goal:"Program complete by end of June.",
+          months:[
+            { m:"January", pts:["Enroll; establish the 25 hr/week rhythm","Medical terminology + anatomy foundations","Excel: sorting, basic formulas"] },
+            { m:"February", pts:["ICD-10-CM structure and chapter guidelines","Excel: SUMIF, COUNTIF, clean tables"] },
+            { m:"March", pts:["ICD-10-CM completion; CPT introduction (E/M)","First look at CPC exam format"] },
+            { m:"April", pts:["CPT surgery sections + modifiers","Checkpoint: program 50% complete","Excel: pivot tables"] },
+            { m:"May", pts:["Finish CPT; HCPCS Level II","Daily CPC guideline drills begin (30 min)","Excel: XLOOKUP / VLOOKUP"] },
+            { m:"June", pts:["Final modules + capstone \u2014 program DONE","First full timed CPC practice exam (baseline)","Build weak-chapter review list"] }
+          ] },
         { d:"July 2027", t:"Phase 2 \u00b7 CPC Strike",
           items:[
             "Full CPC practice exams weekly \u2014 target 80%+ before sitting",
             "Register and sit the CPC exam (AAPC) in July",
             "Begin EHR fundamentals: workflows, revenue cycle inside EHRs"
           ],
-          goal:"CPC passed on the first attempt." },
+          goal:"CPC passed on the first attempt.",
+          months:[
+            { m:"Week 1\u20132", pts:["Two full timed practice exams; drill every miss","Attack weak chapters until 80%+ consistent"] },
+            { m:"Week 3", pts:["Register for CPC (AAPC); final guideline review","Light EHR reading: workflows, revenue cycle basics"] },
+            { m:"Week 4", pts:["Sit the CPC exam \u2014 rested, prayed up, prepared","Rest 2\u20133 days, then preview CRC materials"] }
+          ] },
         { d:"Aug \u2013 Sep 2027", t:"Phase 3 \u00b7 CRC \u2014 The Differentiator",
           items:[
             "CRC (Risk Adjustment / HCC) prep \u2014 6\u20138 focused weeks",
@@ -589,14 +689,22 @@
             "Resume + LinkedIn rebuilt: CPC, CRC, Excel, EHR literacy",
             "Start applying: HCC Coder, Coding Associate, Revenue Cycle roles"
           ],
-          goal:"CPC + CRC stacked. Applications flowing." },
+          goal:"CPC + CRC stacked. Applications flowing.",
+          months:[
+            { m:"August", pts:["CRC curriculum: CMS-HCC model, risk adjustment logic","HCC category mapping + documentation requirements (MEAT)","Rebuild resume: certificate, CPC, Excel, EHR literacy"] },
+            { m:"September", pts:["CRC practice exams weekly \u2014 target 80%+","Sit CRC exam by end of month","LinkedIn live; first application batch out"] }
+          ] },
         { d:"Oct \u2013 Nov 2027", t:"Phase 4 \u00b7 Get Hired",
           items:[
             "Apply aggressively: hospitals, Medicare Advantage plans, RCM vendors",
             "Interview line: \u201cNot Epic-certified yet \u2014 but I know the workflows and I\u2019m ready for sponsorship.\u201d",
             "Accept a strong entry: $55\u201370K. Get in the building."
           ],
-          goal:"Employed by mid-Q4." },
+          goal:"Employed by mid-Q4.",
+          months:[
+            { m:"October", pts:["15\u201320 tailored applications per week","Mock interviews: coding scenarios + Epic-readiness answer"] },
+            { m:"November", pts:["Interviews \u2014 lead with CPC + CRC + Excel + EHR literacy","Negotiate respectfully; accept a strong entry offer"] }
+          ] },
         { d:"Nov \u2013 Dec 2027", t:"Phase 5 \u00b7 Position for the Jump",
           items:[
             "SQL basics \u2014 SQLBolt + practice, into early 2028",
@@ -604,7 +712,12 @@
             "Target employer-sponsored Epic certification",
             "Map the Year-2 move: RCM Analyst / Epic Analyst track"
           ],
-          goal:"Year 1 closed: certified, employed, positioned for $75\u201390K." }
+          goal:"Year 1 closed: certified, employed, positioned for $75\u201390K.",
+          months:[
+            { m:"November", pts:["SQL month 1: SELECT, WHERE, JOINs (SQLBolt)","Learn which Epic modules your employer runs"] },
+            { m:"December", pts:["SQL month 2: aggregation, GROUP BY, subqueries","Volunteer for Epic / systems tasks","Epic sponsorship conversation with manager"] },
+            { m:"Jan 2028", pts:["Finish SQL fundamentals","Write the Year-2 plan: RCM Analyst / Epic Analyst track"] }
+          ] }
       ],
       ms: [
         { id:"m1", text:"Enroll & begin billing/coding program", date:"Jan 2027" },
@@ -697,6 +810,20 @@
         html += '<li>'+ph.items[j]+'</li>';
       }
       html += '</ul>';
+      if(ph.months && ph.months.length){
+        html += '<details class="ph-detail">';
+        html += '<summary>Month-by-Month</summary>';
+        var k, n;
+        for(k=0;k<ph.months.length;k++){
+          var mo = ph.months[k];
+          html += '<div class="mo-row"><div class="mo-name">'+mo.m+'</div><ul>';
+          for(n=0;n<mo.pts.length;n++){
+            html += '<li>'+mo.pts[n]+'</li>';
+          }
+          html += '</ul></div>';
+        }
+        html += '</details>';
+      }
       html += '<div class="ph-goal"><strong>Goal</strong>'+ph.goal+'</div>';
       html += '</div>';
     }
