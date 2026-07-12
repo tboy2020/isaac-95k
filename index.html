@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
 <title>Operation $95K &middot; Isaac Atumu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
     --line:rgba(201,164,76,0.28);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;background:#0B2B27;}
   body{
     background:var(--ink);
     color:var(--cream);
@@ -119,6 +120,7 @@
     font-size:30px;
     text-transform:uppercase;
     letter-spacing:0.04em;
+    color:var(--brass);
   }
   .sec-head .rule{
     width:44px;height:3px;background:var(--brass);
@@ -373,6 +375,24 @@
   }
   .ms.done .ms-text{color:var(--sage);text-decoration:line-through;}
 
+  /* ---------- GLOSSARY ---------- */
+  .gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
+  .g-card{
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px 16px;
+  }
+  .g-abbr{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:800;
+    font-size:20px;
+    color:var(--brass);
+    letter-spacing:0.04em;
+  }
+  .g-full{font-weight:700;font-size:13.5px;margin-top:2px;}
+  .g-what{font-size:12.5px;color:var(--sage);margin-top:4px;line-height:1.5;}
+
   /* ---------- RESOURCES ---------- */
   .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
   .res a{
@@ -472,17 +492,17 @@
       <div class="rung">
         <div class="yr">Year 1 &middot; 2027</div>
         <div class="sal">$55&ndash;70K</div>
-        <div class="role">CPC + CRC certified<br>Coder / Revenue Cycle</div>
+        <div class="role">Certified Professional Coder (CPC)<br>+ Certified Risk Adjustment Coder (CRC)</div>
       </div>
       <div class="rung">
         <div class="yr">Year 2 &middot; 2028</div>
         <div class="sal">$75&ndash;90K</div>
-        <div class="role">CRC + Epic exposure<br>HCC Coder / RCM Analyst</div>
+        <div class="role">Risk-adjustment coding + Epic exposure<br>HCC Coder / Revenue Cycle Analyst</div>
       </div>
       <div class="rung">
         <div class="yr">Year 3 &middot; 2029</div>
         <div class="sal">$95K+</div>
-        <div class="role">Epic-certified Analyst<br>or Senior HCC Coder</div>
+        <div class="role">Epic-certified Analyst or<br>Senior Risk-Adjustment (HCC) Coder</div>
       </div>
     </div>
   </section>
@@ -503,6 +523,28 @@
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
     <div id="msList"></div>
+  </section>
+
+  <section id="glossary">
+    <div class="sec-head">
+      <h2>Speak the Language</h2>
+      <div class="rule"></div>
+      <p>Every abbreviation on this page, decoded. Know these cold before your first interview.</p>
+    </div>
+    <div class="gloss">
+      <div class="g-card"><div class="g-abbr">CPC</div><div class="g-full">Certified Professional Coder</div><div class="g-what">The flagship medical coding credential from the AAPC. Your first certification.</div></div>
+      <div class="g-card"><div class="g-abbr">CRC</div><div class="g-full">Certified Risk Adjustment Coder</div><div class="g-what">The differentiator. Specializes in HCC coding for Medicare Advantage plans.</div></div>
+      <div class="g-card"><div class="g-abbr">HCC</div><div class="g-full">Hierarchical Condition Category</div><div class="g-what">How Medicare scores patient risk. HCC coders are in heavy demand and paid well.</div></div>
+      <div class="g-card"><div class="g-abbr">AAPC</div><div class="g-full">American Academy of Professional Coders</div><div class="g-what">The certifying body that administers the CPC and CRC exams.</div></div>
+      <div class="g-card"><div class="g-abbr">ICD-10-CM</div><div class="g-full">Diagnosis code set</div><div class="g-what">The codes that describe what is wrong with the patient.</div></div>
+      <div class="g-card"><div class="g-abbr">CPT</div><div class="g-full">Current Procedural Terminology</div><div class="g-what">The codes that describe what was done for the patient.</div></div>
+      <div class="g-card"><div class="g-abbr">HCPCS</div><div class="g-full">Healthcare Common Procedure Coding System</div><div class="g-what">Codes for supplies, equipment, and services not in CPT.</div></div>
+      <div class="g-card"><div class="g-abbr">EHR</div><div class="g-full">Electronic Health Record</div><div class="g-what">The hospital software where all patient data lives. Epic is the biggest.</div></div>
+      <div class="g-card"><div class="g-abbr">Epic</div><div class="g-full">Epic Systems</div><div class="g-what">The dominant hospital EHR. Certification is employer-sponsored after hiring.</div></div>
+      <div class="g-card"><div class="g-abbr">RCM</div><div class="g-full">Revenue Cycle Management</div><div class="g-what">Everything between patient visit and payment: coding, billing, claims, collections.</div></div>
+      <div class="g-card"><div class="g-abbr">SQL</div><div class="g-full">Structured Query Language</div><div class="g-what">The language for pulling data from databases. Coder + SQL = Analyst money.</div></div>
+      <div class="g-card"><div class="g-abbr">MEAT</div><div class="g-full">Monitor, Evaluate, Assess, Treat</div><div class="g-what">The documentation standard that justifies an HCC diagnosis code.</div></div>
+    </div>
   </section>
 
   <section id="resources">
@@ -570,9 +612,9 @@
         { d:"Jan \u2013 May 2027", t:"Phase 1 \u00b7 Foundation, Compressed",
           items:[
             "Medical Billing & Coding program at double pace \u2014 finish by May",
-            "ICD-10-CM, CPT, HCPCS mastery \u2014 no weak chapters",
+            "ICD-10-CM (diagnosis codes), CPT (procedure codes), HCPCS (supplies & services) mastery \u2014 no weak chapters",
             "Excel 3x/week: formulas \u2192 pivot tables \u2192 XLOOKUP",
-            "CPC exam format awareness from month 2"
+            "CPC (Certified Professional Coder) exam format awareness from month 2"
           ],
           goal:"Program complete by end of May. Zero backlog.",
           months:[
@@ -585,8 +627,8 @@
         { d:"June 2027", t:"Phase 2 \u00b7 CPC Strike",
           items:[
             "Full CPC practice exams weekly \u2014 target 80%+ before sitting",
-            "Register and sit the CPC exam (AAPC) in June",
-            "Begin EHR fundamentals: workflows, revenue cycle inside EHRs"
+            "Register and sit the CPC exam with the AAPC (American Academy of Professional Coders) in June",
+            "Begin EHR (Electronic Health Record) fundamentals: workflows, revenue cycle inside EHRs"
           ],
           goal:"CPC passed on the first attempt.",
           months:[
@@ -596,19 +638,19 @@
           ] },
         { d:"Jul \u2013 Aug 2027", t:"Phase 3 \u00b7 CRC \u2014 The Differentiator",
           items:[
-            "CRC (Risk Adjustment / HCC) prep \u2014 6\u20138 focused weeks",
+            "CRC (Certified Risk Adjustment Coder) prep \u2014 6\u20138 focused weeks",
             "Sit CRC exam by end of August",
             "Resume + LinkedIn rebuilt: CPC, CRC, Excel, EHR literacy",
-            "Start applying: HCC Coder, Coding Associate, Revenue Cycle roles"
+            "Start applying: HCC (Hierarchical Condition Category) Coder, Coding Associate, Revenue Cycle roles"
           ],
           goal:"CPC + CRC stacked in one summer. Applications flowing.",
           months:[
-            { m:"July", pts:["CRC curriculum: CMS-HCC model, risk adjustment logic","HCC category mapping + documentation requirements (MEAT)","Rebuild resume: certificate, CPC, Excel, EHR literacy","EHR study: revenue cycle inside Epic-style systems"] },
+            { m:"July", pts:["CRC curriculum: Medicare\u2019s CMS-HCC risk model, risk adjustment logic","HCC category mapping + documentation requirements (MEAT: Monitor, Evaluate, Assess, Treat)","Rebuild resume: certificate, CPC, Excel, EHR literacy","EHR study: revenue cycle inside Epic-style systems"] },
             { m:"August", pts:["CRC practice exams weekly \u2014 target 80%+","Sit CRC exam by end of month","LinkedIn profile live and optimized","First application batch: HCC Coder, Coding Associate, Revenue Cycle"] }
           ] },
         { d:"Sep 2027", t:"Phase 4 \u00b7 Get Hired",
           items:[
-            "Apply aggressively: hospitals, Medicare Advantage plans, RCM vendors",
+            "Apply aggressively: hospitals, Medicare Advantage plans, RCM (Revenue Cycle Management) vendors",
             "Interview line: \u201cNot Epic-certified yet \u2014 but I know the workflows and I\u2019m ready for sponsorship.\u201d",
             "Accept a strong entry: $55\u201370K. Get in the building."
           ],
@@ -619,7 +661,7 @@
           ] },
         { d:"Oct \u2013 Dec 2027", t:"Phase 5 \u00b7 Position for the Jump",
           items:[
-            "SQL basics \u2014 SQLBolt + practice, 2 months",
+            "SQL (Structured Query Language) basics \u2014 SQLBolt + practice, 2 months",
             "Raise your hand for every Epic project at work",
             "Target employer-sponsored Epic certification",
             "Map the Year-2 move: RCM Analyst / Epic Analyst track"
@@ -635,8 +677,8 @@
         { id:"m1", text:"Enroll & begin billing/coding program", date:"Jan 2027" },
         { id:"m2", text:"Program 50% complete", date:"Mar 2027" },
         { id:"m3", text:"Program finished", date:"May 2027" },
-        { id:"m4", text:"CPC exam passed", date:"Jun 2027" },
-        { id:"m5", text:"CRC exam passed", date:"Aug 2027" },
+        { id:"m4", text:"CPC (Certified Professional Coder) exam passed", date:"Jun 2027" },
+        { id:"m5", text:"CRC (Certified Risk Adjustment Coder) exam passed", date:"Aug 2027" },
         { id:"m6", text:"Hired \u2014 first role secured", date:"Sep 2027" },
         { id:"m7", text:"SQL basics complete", date:"Nov 2027" },
         { id:"m8", text:"Epic sponsorship conversation started", date:"Dec 2027" }
@@ -657,9 +699,9 @@
         { d:"Jan \u2013 Jun 2027", t:"Phase 1 \u00b7 Foundation",
           items:[
             "Medical Billing & Coding program \u2014 finish by June",
-            "ICD-10-CM, CPT, HCPCS mastery",
+            "ICD-10-CM (diagnosis codes), CPT (procedure codes), HCPCS (supplies & services) mastery",
             "Excel 2x/week: formulas \u2192 pivot tables \u2192 XLOOKUP",
-            "CPC exam format awareness from month 3"
+            "CPC (Certified Professional Coder) exam format awareness from month 3"
           ],
           goal:"Program complete by end of June.",
           months:[
@@ -673,8 +715,8 @@
         { d:"July 2027", t:"Phase 2 \u00b7 CPC Strike",
           items:[
             "Full CPC practice exams weekly \u2014 target 80%+ before sitting",
-            "Register and sit the CPC exam (AAPC) in July",
-            "Begin EHR fundamentals: workflows, revenue cycle inside EHRs"
+            "Register and sit the CPC exam with the AAPC (American Academy of Professional Coders) in July",
+            "Begin EHR (Electronic Health Record) fundamentals: workflows, revenue cycle inside EHRs"
           ],
           goal:"CPC passed on the first attempt.",
           months:[
@@ -684,19 +726,19 @@
           ] },
         { d:"Aug \u2013 Sep 2027", t:"Phase 3 \u00b7 CRC \u2014 The Differentiator",
           items:[
-            "CRC (Risk Adjustment / HCC) prep \u2014 6\u20138 focused weeks",
+            "CRC (Certified Risk Adjustment Coder) prep \u2014 6\u20138 focused weeks",
             "Sit CRC exam by end of September",
             "Resume + LinkedIn rebuilt: CPC, CRC, Excel, EHR literacy",
-            "Start applying: HCC Coder, Coding Associate, Revenue Cycle roles"
+            "Start applying: HCC (Hierarchical Condition Category) Coder, Coding Associate, Revenue Cycle roles"
           ],
           goal:"CPC + CRC stacked. Applications flowing.",
           months:[
-            { m:"August", pts:["CRC curriculum: CMS-HCC model, risk adjustment logic","HCC category mapping + documentation requirements (MEAT)","Rebuild resume: certificate, CPC, Excel, EHR literacy"] },
+            { m:"August", pts:["CRC curriculum: Medicare\u2019s CMS-HCC risk model, risk adjustment logic","HCC category mapping + documentation requirements (MEAT: Monitor, Evaluate, Assess, Treat)","Rebuild resume: certificate, CPC, Excel, EHR literacy"] },
             { m:"September", pts:["CRC practice exams weekly \u2014 target 80%+","Sit CRC exam by end of month","LinkedIn live; first application batch out"] }
           ] },
         { d:"Oct \u2013 Nov 2027", t:"Phase 4 \u00b7 Get Hired",
           items:[
-            "Apply aggressively: hospitals, Medicare Advantage plans, RCM vendors",
+            "Apply aggressively: hospitals, Medicare Advantage plans, RCM (Revenue Cycle Management) vendors",
             "Interview line: \u201cNot Epic-certified yet \u2014 but I know the workflows and I\u2019m ready for sponsorship.\u201d",
             "Accept a strong entry: $55\u201370K. Get in the building."
           ],
@@ -707,7 +749,7 @@
           ] },
         { d:"Nov \u2013 Dec 2027", t:"Phase 5 \u00b7 Position for the Jump",
           items:[
-            "SQL basics \u2014 SQLBolt + practice, into early 2028",
+            "SQL (Structured Query Language) basics \u2014 SQLBolt + practice, into early 2028",
             "Raise your hand for every Epic project at work",
             "Target employer-sponsored Epic certification",
             "Map the Year-2 move: RCM Analyst / Epic Analyst track"
@@ -723,8 +765,8 @@
         { id:"m1", text:"Enroll & begin billing/coding program", date:"Jan 2027" },
         { id:"m2", text:"Program 50% complete", date:"Apr 2027" },
         { id:"m3", text:"Program finished", date:"Jun 2027" },
-        { id:"m4", text:"CPC exam passed", date:"Jul 2027" },
-        { id:"m5", text:"CRC exam passed", date:"Sep 2027" },
+        { id:"m4", text:"CPC (Certified Professional Coder) exam passed", date:"Jul 2027" },
+        { id:"m5", text:"CRC (Certified Risk Adjustment Coder) exam passed", date:"Sep 2027" },
         { id:"m6", text:"Hired \u2014 first role secured", date:"Nov 2027" },
         { id:"m7", text:"SQL basics complete", date:"Jan 2028" },
         { id:"m8", text:"Epic sponsorship conversation started", date:"Feb 2028" }
