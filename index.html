@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation $95K &middot; Isaac Atumu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B2B27;
+    --ink-2:#0F3833;
+    --ink-3:#134540;
+    --brass:#C9A44C;
+    --brass-deep:#8F7434;
+    --cream:#F4EDDC;
+    --sage:#9CBBAE;
+    --line:rgba(201,164,76,0.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 44px;
+    background:
+      radial-gradient(ellipse at 80% -10%, rgba(201,164,76,0.12), transparent 55%),
+      linear-gradient(180deg, #0A2622 0%, var(--ink) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;
+    letter-spacing:0.32em;
+    font-size:12px;
+    color:var(--brass);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:800;
+    font-size:clamp(52px,9vw,88px);
+    line-height:0.95;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+  }
+  h1 .amt{color:var(--brass);}
+  .hero-sub{
+    margin-top:14px;
+    font-size:17px;
+    color:var(--sage);
+    font-weight:500;
+  }
+  .hero-sub strong{color:var(--cream);font-weight:700;}
+  .count-chip{
+    display:inline-flex;
+    align-items:baseline;
+    gap:10px;
+    margin-top:24px;
+    padding:12px 20px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:rgba(201,164,76,0.06);
+  }
+  .count-chip .num{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:800;
+    font-size:34px;
+    color:var(--brass);
+    line-height:1;
+  }
+  .count-chip .lbl{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--sage);
+  }
+  .verse{
+    margin-top:30px;
+    padding-left:18px;
+    border-left:2px solid var(--brass);
+    max-width:560px;
+  }
+  .verse p{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:19px;
+    line-height:1.55;
+    color:var(--cream);
+  }
+  .verse cite{
+    display:block;
+    margin-top:8px;
+    font-family:'Inter',sans-serif;
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brass);
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:46px 0;}
+  .sec-head{margin-bottom:26px;}
+  .sec-head h2{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:700;
+    font-size:30px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .sec-head .rule{
+    width:44px;height:3px;background:var(--brass);
+    margin-top:8px;border-radius:2px;
+  }
+  .sec-head p{margin-top:10px;color:var(--sage);font-size:15px;max-width:620px;}
+
+  /* ---------- PACE SELECTOR ---------- */
+  .paces{display:flex;gap:14px;flex-wrap:wrap;}
+  .pace-btn{
+    flex:1;min-width:240px;
+    text-align:left;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px 22px;
+    cursor:pointer;
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    transition:border-color .2s, background .2s, transform .15s;
+  }
+  .pace-btn:hover{transform:translateY(-2px);}
+  .pace-btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px;}
+  .pace-btn.active{
+    background:linear-gradient(160deg, #17544C 0%, var(--ink-2) 90%);
+    border-color:var(--brass);
+    box-shadow:0 0 0 1px var(--brass) inset;
+  }
+  .pace-btn .p-name{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:800;
+    font-size:26px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .pace-btn.active .p-name{color:var(--brass);}
+  .pace-btn .p-sub{font-size:13px;color:var(--sage);margin-top:4px;}
+  .pace-btn .p-tag{
+    display:inline-block;margin-top:10px;
+    font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--ink);background:var(--brass);
+    padding:3px 10px;border-radius:3px;
+  }
+  .pace-btn .p-tag.ghost{background:transparent;color:var(--sage);border:1px solid var(--line);}
+
+  /* ---------- TIMELINE ---------- */
+  .phase{
+    position:relative;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px 24px 22px 30px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .phase::before{
+    content:"";
+    position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:linear-gradient(180deg,var(--brass),var(--brass-deep));
+  }
+  .ph-dates{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--brass);
+  }
+  .ph-title{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:700;
+    font-size:24px;
+    text-transform:uppercase;
+    margin-top:4px;
+  }
+  .phase ul{list-style:none;margin-top:12px;}
+  .phase li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:7px;
+    font-size:14.5px;
+    color:#DCE8E0;
+  }
+  .phase li::before{
+    content:"";
+    position:absolute;left:2px;top:8px;
+    width:7px;height:7px;
+    border:1.5px solid var(--brass);
+    border-radius:50%;
+  }
+  .ph-goal{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-size:13.5px;
+    color:var(--sage);
+  }
+  .ph-goal strong{color:var(--brass);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;font-size:12px;margin-right:8px;}
+
+  /* ---------- SALARY LADDER ---------- */
+  .ladder{display:flex;gap:0;align-items:flex-end;}
+  .rung{
+    flex:1;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-right:none;
+    padding:18px 16px;
+    text-align:center;
+  }
+  .rung:first-child{border-radius:10px 0 0 10px;}
+  .rung:last-child{border-right:1px solid var(--brass);border-radius:0 10px 10px 0;border-color:var(--brass);background:linear-gradient(180deg,#17544C, var(--ink-2));}
+  .rung:nth-child(1){min-height:120px;}
+  .rung:nth-child(2){min-height:150px;}
+  .rung:nth-child(3){min-height:180px;}
+  .rung .yr{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);}
+  .rung .sal{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:800;font-size:28px;color:var(--cream);margin-top:6px;line-height:1;
+  }
+  .rung:last-child .sal{color:var(--brass);font-size:32px;}
+  .rung .role{font-size:12px;color:var(--sage);margin-top:8px;line-height:1.4;}
+
+  /* ---------- RHYTHM ---------- */
+  .rhythm{
+    display:flex;gap:14px;flex-wrap:wrap;
+  }
+  .r-card{
+    flex:1;min-width:200px;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px 20px;
+  }
+  .r-card .big{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:800;font-size:36px;color:var(--brass);line-height:1;
+  }
+  .r-card .cap{font-size:13px;color:var(--sage);margin-top:6px;}
+
+  /* ---------- MILESTONES ---------- */
+  .progress-bar{
+    height:10px;border-radius:6px;
+    background:var(--ink-3);
+    border:1px solid var(--line);
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .progress-fill{
+    height:100%;width:0%;
+    background:linear-gradient(90deg,var(--brass-deep),var(--brass));
+    transition:width .35s ease;
+  }
+  .ms{
+    display:flex;align-items:flex-start;gap:14px;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:border-color .2s;
+  }
+  .ms:hover{border-color:var(--brass);}
+  .ms input{
+    appearance:none;-webkit-appearance:none;
+    width:22px;height:22px;flex:none;
+    border:2px solid var(--brass);
+    border-radius:5px;
+    background:transparent;
+    cursor:pointer;
+    position:relative;
+    margin-top:1px;
+  }
+  .ms input:checked{background:var(--brass);}
+  .ms input:checked::after{
+    content:"";
+    position:absolute;left:6px;top:2px;
+    width:5px;height:11px;
+    border:solid var(--ink);
+    border-width:0 3px 3px 0;
+    transform:rotate(45deg);
+  }
+  .ms input:focus-visible{outline:2px solid var(--cream);outline-offset:2px;}
+  .ms .ms-text{font-size:14.5px;font-weight:500;}
+  .ms .ms-date{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;font-size:12px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--brass);
+    display:block;margin-top:2px;
+  }
+  .ms.done .ms-text{color:var(--sage);text-decoration:line-through;}
+
+  /* ---------- RESOURCES ---------- */
+  .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
+  .res a{
+    display:block;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px 16px;
+    color:var(--cream);
+    text-decoration:none;
+    transition:border-color .2s;
+  }
+  .res a:hover{border-color:var(--brass);}
+  .res .r-name{font-weight:700;font-size:14.5px;}
+  .res .r-what{font-size:12.5px;color:var(--sage);margin-top:3px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:38px 0 46px;
+    text-align:center;
+  }
+  footer .fv{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--sage);
+    max-width:520px;
+    margin:0 auto;
+  }
+  footer .fc{
+    margin-top:8px;
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass);
+  }
+  footer .studio{
+    margin-top:22px;
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;
+    color:rgba(244,237,220,0.35);
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:560px){
+    .ladder{flex-direction:column;align-items:stretch;}
+    .rung{border-right:1px solid var(--line);border-bottom:none;min-height:0 !important;}
+    .rung:first-child{border-radius:10px 10px 0 0;}
+    .rung:last-child{border-radius:0 0 10px 10px;border-bottom:1px solid var(--brass);}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Cornerstone Studio &middot; Career Roadmap &middot; 2027</div>
+    <h1>Operation <span class="amt">$95K</span></h1>
+    <p class="hero-sub"><strong>Isaac Atumu</strong> &middot; Medical Coding &rarr; Revenue Cycle &rarr; Health IT</p>
+    <div class="count-chip">
+      <span class="num" id="countNum">&mdash;</span>
+      <span class="lbl" id="countLbl">days to launch &middot; Jan 1, 2027</span>
+    </div>
+    <div class="verse">
+      <p>Seest thou a man diligent in his business? he shall stand before kings; he shall not stand before mean men.</p>
+      <cite>Proverbs 22:29 &middot; KJV</cite>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="pace">
+    <div class="sec-head">
+      <h2>Choose Your Pace</h2>
+      <div class="rule"></div>
+      <p>One free year. No standard stroll. Pick the pace and the entire calendar below recalculates from January 1, 2027.</p>
+    </div>
+    <div class="paces" id="paceBtns"></div>
+  </section>
+
+  <section id="timeline">
+    <div class="sec-head">
+      <h2>The Battle Plan</h2>
+      <div class="rule"></div>
+    </div>
+    <div id="phases"></div>
+  </section>
+
+  <section id="ladder">
+    <div class="sec-head">
+      <h2>The Salary Ladder</h2>
+      <div class="rule"></div>
+      <p>Keep the destination visible. Each rung is earned by the credential stacked before it.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung">
+        <div class="yr">Year 1 &middot; 2027</div>
+        <div class="sal">$55&ndash;70K</div>
+        <div class="role">CPC + CRC certified<br>Coder / Revenue Cycle</div>
+      </div>
+      <div class="rung">
+        <div class="yr">Year 2 &middot; 2028</div>
+        <div class="sal">$75&ndash;90K</div>
+        <div class="role">CRC + Epic exposure<br>HCC Coder / RCM Analyst</div>
+      </div>
+      <div class="rung">
+        <div class="yr">Year 3 &middot; 2029</div>
+        <div class="sal">$95K+</div>
+        <div class="role">Epic-certified Analyst<br>or Senior HCC Coder</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rhythm">
+    <div class="sec-head">
+      <h2>Weekly Rhythm</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rhythm" id="rhythmCards"></div>
+  </section>
+
+  <section id="milestones">
+    <div class="sec-head">
+      <h2>Milestones</h2>
+      <div class="rule"></div>
+      <p>Check them off as you conquer. Progress is saved on this device.</p>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+    <div id="msList"></div>
+  </section>
+
+  <section id="resources">
+    <div class="sec-head">
+      <h2>Armory</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="res">
+      <a href="https://www.aapc.com/certification/cpc/" target="_blank" rel="noopener">
+        <div class="r-name">AAPC &middot; CPC Certification</div>
+        <div class="r-what">Exam registration, study guides, practice exams</div>
+      </a>
+      <a href="https://www.aapc.com/certification/crc/" target="_blank" rel="noopener">
+        <div class="r-name">AAPC &middot; CRC Certification</div>
+        <div class="r-what">Risk adjustment / HCC coding &mdash; the differentiator</div>
+      </a>
+      <a href="https://www.sqlbolt.com/" target="_blank" rel="noopener">
+        <div class="r-name">SQLBolt</div>
+        <div class="r-what">Free interactive SQL lessons &mdash; analyst fuel</div>
+      </a>
+      <a href="https://www.khanacademy.org/" target="_blank" rel="noopener">
+        <div class="r-name">Khan Academy</div>
+        <div class="r-what">Free refreshers &mdash; math, statistics, study skills</div>
+      </a>
+      <a href="https://www.epic.com/software/" target="_blank" rel="noopener">
+        <div class="r-name">Epic Systems &middot; Software Overview</div>
+        <div class="r-what">Learn module names: Cadence, Resolute, HIM</div>
+      </a>
+      <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener">
+        <div class="r-name">LinkedIn Jobs</div>
+        <div class="r-what">Search: Revenue Cycle Analyst, HCC Coder, Epic Analyst</div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fv">And whatsoever ye do, do it heartily, as to the Lord, and not unto men.</p>
+    <p class="fc">Colossians 3:23 &middot; KJV</p>
+    <p class="studio">Cornerstone Studio &middot; Built in Faith</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var STORE_PACE = "ia95_pace";
+  var STORE_DONE = "ia95_done";
+
+  var PLANS = {
+    warrior: {
+      name: "Warrior",
+      sub: "Program in 4\u20135 months. Certified by June. Hired by September.",
+      tag: "Recommended",
+      hours: "35+",
+      hoursCap: "study hours per week",
+      blocks: "6 days",
+      blocksCap: "per week \u00b7 Sabbath rest honored",
+      review: "Sunday PM",
+      reviewCap: "weekly review + plan next week",
+      phases: [
+        { d:"Jan \u2013 May 2027", t:"Phase 1 \u00b7 Foundation, Compressed",
+          items:[
+            "Medical Billing & Coding program at double pace \u2014 finish by May",
+            "ICD-10-CM, CPT, HCPCS mastery \u2014 no weak chapters",
+            "Excel 3x/week: formulas \u2192 pivot tables \u2192 XLOOKUP",
+            "CPC exam format awareness from month 2"
+          ],
+          goal:"Program complete by end of May. Zero backlog." },
+        { d:"June 2027", t:"Phase 2 \u00b7 CPC Strike",
+          items:[
+            "Full CPC practice exams weekly \u2014 target 80%+ before sitting",
+            "Register and sit the CPC exam (AAPC) in June",
+            "Begin EHR fundamentals: workflows, revenue cycle inside EHRs"
+          ],
+          goal:"CPC passed on the first attempt." },
+        { d:"Jul \u2013 Aug 2027", t:"Phase 3 \u00b7 CRC \u2014 The Differentiator",
+          items:[
+            "CRC (Risk Adjustment / HCC) prep \u2014 6\u20138 focused weeks",
+            "Sit CRC exam by end of August",
+            "Resume + LinkedIn rebuilt: CPC, CRC, Excel, EHR literacy",
+            "Start applying: HCC Coder, Coding Associate, Revenue Cycle roles"
+          ],
+          goal:"CPC + CRC stacked in one summer. Applications flowing." },
+        { d:"Sep 2027", t:"Phase 4 \u00b7 Get Hired",
+          items:[
+            "Apply aggressively: hospitals, Medicare Advantage plans, RCM vendors",
+            "Interview line: \u201cNot Epic-certified yet \u2014 but I know the workflows and I\u2019m ready for sponsorship.\u201d",
+            "Accept a strong entry: $55\u201370K. Get in the building."
+          ],
+          goal:"Employed by end of September." },
+        { d:"Oct \u2013 Dec 2027", t:"Phase 5 \u00b7 Position for the Jump",
+          items:[
+            "SQL basics \u2014 SQLBolt + practice, 2 months",
+            "Raise your hand for every Epic project at work",
+            "Target employer-sponsored Epic certification",
+            "Map the Year-2 move: RCM Analyst / Epic Analyst track"
+          ],
+          goal:"Year 1 closed: certified, employed, positioned for $75\u201390K." }
+      ],
+      ms: [
+        { id:"m1", text:"Enroll & begin billing/coding program", date:"Jan 2027" },
+        { id:"m2", text:"Program 50% complete", date:"Mar 2027" },
+        { id:"m3", text:"Program finished", date:"May 2027" },
+        { id:"m4", text:"CPC exam passed", date:"Jun 2027" },
+        { id:"m5", text:"CRC exam passed", date:"Aug 2027" },
+        { id:"m6", text:"Hired \u2014 first role secured", date:"Sep 2027" },
+        { id:"m7", text:"SQL basics complete", date:"Nov 2027" },
+        { id:"m8", text:"Epic sponsorship conversation started", date:"Dec 2027" }
+      ]
+    },
+    accel: {
+      name: "Accelerated",
+      sub: "Program in 6 months. Certified by September. Hired in Q4.",
+      tag: "Fallback",
+      tagGhost: true,
+      hours: "25",
+      hoursCap: "study hours per week",
+      blocks: "5 days",
+      blocksCap: "per week \u00b7 weekends lighter",
+      review: "Sunday PM",
+      reviewCap: "weekly review + plan next week",
+      phases: [
+        { d:"Jan \u2013 Jun 2027", t:"Phase 1 \u00b7 Foundation",
+          items:[
+            "Medical Billing & Coding program \u2014 finish by June",
+            "ICD-10-CM, CPT, HCPCS mastery",
+            "Excel 2x/week: formulas \u2192 pivot tables \u2192 XLOOKUP",
+            "CPC exam format awareness from month 3"
+          ],
+          goal:"Program complete by end of June." },
+        { d:"July 2027", t:"Phase 2 \u00b7 CPC Strike",
+          items:[
+            "Full CPC practice exams weekly \u2014 target 80%+ before sitting",
+            "Register and sit the CPC exam (AAPC) in July",
+            "Begin EHR fundamentals: workflows, revenue cycle inside EHRs"
+          ],
+          goal:"CPC passed on the first attempt." },
+        { d:"Aug \u2013 Sep 2027", t:"Phase 3 \u00b7 CRC \u2014 The Differentiator",
+          items:[
+            "CRC (Risk Adjustment / HCC) prep \u2014 6\u20138 focused weeks",
+            "Sit CRC exam by end of September",
+            "Resume + LinkedIn rebuilt: CPC, CRC, Excel, EHR literacy",
+            "Start applying: HCC Coder, Coding Associate, Revenue Cycle roles"
+          ],
+          goal:"CPC + CRC stacked. Applications flowing." },
+        { d:"Oct \u2013 Nov 2027", t:"Phase 4 \u00b7 Get Hired",
+          items:[
+            "Apply aggressively: hospitals, Medicare Advantage plans, RCM vendors",
+            "Interview line: \u201cNot Epic-certified yet \u2014 but I know the workflows and I\u2019m ready for sponsorship.\u201d",
+            "Accept a strong entry: $55\u201370K. Get in the building."
+          ],
+          goal:"Employed by mid-Q4." },
+        { d:"Nov \u2013 Dec 2027", t:"Phase 5 \u00b7 Position for the Jump",
+          items:[
+            "SQL basics \u2014 SQLBolt + practice, into early 2028",
+            "Raise your hand for every Epic project at work",
+            "Target employer-sponsored Epic certification",
+            "Map the Year-2 move: RCM Analyst / Epic Analyst track"
+          ],
+          goal:"Year 1 closed: certified, employed, positioned for $75\u201390K." }
+      ],
+      ms: [
+        { id:"m1", text:"Enroll & begin billing/coding program", date:"Jan 2027" },
+        { id:"m2", text:"Program 50% complete", date:"Apr 2027" },
+        { id:"m3", text:"Program finished", date:"Jun 2027" },
+        { id:"m4", text:"CPC exam passed", date:"Jul 2027" },
+        { id:"m5", text:"CRC exam passed", date:"Sep 2027" },
+        { id:"m6", text:"Hired \u2014 first role secured", date:"Nov 2027" },
+        { id:"m7", text:"SQL basics complete", date:"Jan 2028" },
+        { id:"m8", text:"Epic sponsorship conversation started", date:"Feb 2028" }
+      ]
+    }
+  };
+
+  var currentPace = "warrior";
+  var doneIds = [];
+
+  function loadState(){
+    try{
+      var p = localStorage.getItem(STORE_PACE);
+      if(p && PLANS[p]){ currentPace = p; }
+      var d = localStorage.getItem(STORE_DONE);
+      if(d){ doneIds = JSON.parse(d); }
+      if(Object.prototype.toString.call(doneIds) !== "[object Array]"){ doneIds = []; }
+    }catch(e){ doneIds = []; }
+  }
+  function saveState(){
+    try{
+      localStorage.setItem(STORE_PACE, currentPace);
+      localStorage.setItem(STORE_DONE, JSON.stringify(doneIds));
+    }catch(e){}
+  }
+  function isDone(id){
+    var i;
+    for(i=0;i<doneIds.length;i++){ if(doneIds[i]===id){ return true; } }
+    return false;
+  }
+  function toggleDone(id){
+    var i, out = [], found = false;
+    for(i=0;i<doneIds.length;i++){
+      if(doneIds[i]===id){ found = true; } else { out.push(doneIds[i]); }
+    }
+    if(!found){ out.push(id); }
+    doneIds = out;
+    saveState();
+  }
+
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  function renderPaceButtons(){
+    var host = document.getElementById("paceBtns");
+    var html = "";
+    var keys = ["warrior","accel"];
+    var i;
+    for(i=0;i<keys.length;i++){
+      var k = keys[i];
+      var p = PLANS[k];
+      var act = (k===currentPace) ? " active" : "";
+      var tagCls = p.tagGhost ? "p-tag ghost" : "p-tag";
+      html += '<button type="button" class="pace-btn'+act+'" data-pace="'+k+'" aria-pressed="'+(k===currentPace)+'">';
+      html += '<div class="p-name">'+esc(p.name)+'</div>';
+      html += '<div class="p-sub">'+p.sub+'</div>';
+      html += '<span class="'+tagCls+'">'+esc(p.tag)+'</span>';
+      html += '</button>';
+    }
+    host.innerHTML = html;
+    var btns = host.getElementsByClassName("pace-btn");
+    for(i=0;i<btns.length;i++){
+      btns[i].addEventListener("click", function(){
+        currentPace = this.getAttribute("data-pace");
+        saveState();
+        renderAll();
+      });
+    }
+  }
+
+  function renderPhases(){
+    var p = PLANS[currentPace];
+    var host = document.getElementById("phases");
+    var html = "", i, j;
+    for(i=0;i<p.phases.length;i++){
+      var ph = p.phases[i];
+      html += '<div class="phase">';
+      html += '<div class="ph-dates">'+ph.d+'</div>';
+      html += '<div class="ph-title">'+ph.t+'</div>';
+      html += '<ul>';
+      for(j=0;j<ph.items.length;j++){
+        html += '<li>'+ph.items[j]+'</li>';
+      }
+      html += '</ul>';
+      html += '<div class="ph-goal"><strong>Goal</strong>'+ph.goal+'</div>';
+      html += '</div>';
+    }
+    host.innerHTML = html;
+  }
+
+  function renderRhythm(){
+    var p = PLANS[currentPace];
+    var host = document.getElementById("rhythmCards");
+    var html = "";
+    html += '<div class="r-card"><div class="big">'+p.hours+'</div><div class="cap">'+p.hoursCap+'</div></div>';
+    html += '<div class="r-card"><div class="big">'+p.blocks+'</div><div class="cap">'+p.blocksCap+'</div></div>';
+    html += '<div class="r-card"><div class="big">'+p.review+'</div><div class="cap">'+p.reviewCap+'</div></div>';
+    host.innerHTML = html;
+  }
+
+  function renderMilestones(){
+    var p = PLANS[currentPace];
+    var host = document.getElementById("msList");
+    var html = "", i;
+    for(i=0;i<p.ms.length;i++){
+      var m = p.ms[i];
+      var chk = isDone(m.id) ? " checked" : "";
+      var doneCls = isDone(m.id) ? " done" : "";
+      html += '<label class="ms'+doneCls+'">';
+      html += '<input type="checkbox" data-ms="'+m.id+'"'+chk+'>';
+      html += '<span><span class="ms-text">'+esc(m.text)+'</span>';
+      html += '<span class="ms-date">Target: '+esc(m.date)+'</span></span>';
+      html += '</label>';
+    }
+    host.innerHTML = html;
+    var boxes = host.getElementsByTagName("input");
+    for(i=0;i<boxes.length;i++){
+      boxes[i].addEventListener("change", function(){
+        toggleDone(this.getAttribute("data-ms"));
+        renderMilestones();
+      });
+    }
+    var pct = Math.round((doneIds.length / p.ms.length) * 100);
+    if(pct > 100){ pct = 100; }
+    document.getElementById("progFill").style.width = pct + "%";
+  }
+
+  function renderCountdown(){
+    var launch = new Date(2027, 0, 1);
+    var now = new Date();
+    var diff = launch.getTime() - now.getTime();
+    var numEl = document.getElementById("countNum");
+    var lblEl = document.getElementById("countLbl");
+    if(diff > 0){
+      var days = Math.ceil(diff / 86400000);
+      numEl.innerHTML = String(days);
+      lblEl.innerHTML = "days to launch &middot; Jan 1, 2027";
+    } else {
+      numEl.innerHTML = "LIVE";
+      lblEl.innerHTML = "the year of diligence is underway";
+    }
+  }
+
+  function renderAll(){
+    renderPaceButtons();
+    renderPhases();
+    renderRhythm();
+    renderMilestones();
+  }
+
+  loadState();
+  renderCountdown();
+  renderAll();
+})();
+</script>
+</body>
+</html>
